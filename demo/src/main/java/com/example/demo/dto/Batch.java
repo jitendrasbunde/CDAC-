@@ -1,6 +1,7 @@
 package com.example.demo.dto;
 
 public class Batch {
+	private int id;
 	private String name;
 	private long start;
 	private long end;
@@ -12,6 +13,15 @@ public class Batch {
 
 	public String getName() {
 		return name;
+	}
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public void setName(String name) {

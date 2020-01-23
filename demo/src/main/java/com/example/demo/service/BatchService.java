@@ -10,4 +10,5 @@ import com.example.demo.dto.Student;
 public interface BatchService {
 	List<Batch> allBatch();
 	List<Student> allStudent(int bid);
+	boolean createBatch(Batch batch);
 	}

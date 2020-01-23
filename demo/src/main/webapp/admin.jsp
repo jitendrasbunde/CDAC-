@@ -17,8 +17,8 @@ int i=1;
 		</div>
 		<div class="col-8 ">
 			<div class="row " style="height: 150px">
-				<div class="col-4"> <input  type="submit" class="btn btn-success" value="Add Batch" onclick="location.href='AddBatch'" /> </div>
-        		<div class="col-4"> <input  type="submit" class="btn btn-success" value="Add Mentor" onclick="location.href='AddBatch'" /> </div>
+				<div class="col-4"> <input  type="submit" class="btn btn-success" value="Add Batch" onclick="location.href='addbatch'" /> </div>
+        		<div class="col-4"> <input  type="submit" class="btn btn-success" value="Add Mentor" onclick="location.href='mentoradd'" /> </div>
         		<div class="col-4"> <input  type="submit" class="btn btn-success" value="Add Alumni" onclick="location.href='AddBatch'" /> </div>
       
 			 </div>

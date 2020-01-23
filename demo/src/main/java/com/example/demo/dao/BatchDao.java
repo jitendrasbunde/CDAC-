@@ -9,4 +9,5 @@ import com.example.demo.dto.Student;
 public interface BatchDao {
  List<Batch> selectAll();
  List<Student> selectBatchStudents(int bid);
+ boolean create(Batch batch);
 }

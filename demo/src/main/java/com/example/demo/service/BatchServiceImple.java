@@ -28,4 +28,14 @@ public class BatchServiceImple implements BatchService {
 		return slist;
 	}
 
+	@Override
+	public boolean createBatch(Batch batch) {
+		// TODO Auto-generated method stub
+		batchDao.create(batch);
+		return false;
+	}
+	
+
+	
+
 }

@@ -6,12 +6,15 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.dto.Batch;
 import com.example.demo.service.BatchService;
 import com.example.demo.service.BatchServiceImple;
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 
 @Controller
 public class AdminController {
@@ -34,5 +37,21 @@ public class AdminController {
 		}
 		return mv;
 	}
+	
+	@GetMapping("/addbatch")
+	public ModelAndView page2() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("addbatch.jsp");
+		return mv;
+	}
 
+	
+	@PostMapping("/addbatch1")
+	public ModelAndView page2(Batch batch) {
+		ModelAndView mv = new ModelAndView();
+		
+		batchService.createBatch(batch);
+		mv.setViewName("admin.jsp");
+		return mv;
+	}
 }

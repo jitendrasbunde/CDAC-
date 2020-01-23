@@ -1,6 +1,7 @@
 package com.example.demo.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -20,11 +21,15 @@ public class UserDaoImple implements UserDao{
 		System.out.println(user.getUserName()+"  "+user.getPassword());
 		MyConn obj = new MyConn();
 		
-		
+		try {
 		String sql ="SELECT * FROM USER WHERE USERNAME=? AND PASSWORD=?";
-		User temp = jdbcTemplate.queryForObject(sql,new Object[] {user.getUserName(),user.getPassword()}, new UserRowMapper());
 		obj.setJdbcTemplate(jdbcTemplate);
+		User temp = jdbcTemplate.queryForObject(sql,new Object[] {user.getUserName(),user.getPassword()}, new UserRowMapper());
+
 		System.out.println("USER IS Select");
 		return temp;
+		}catch(EmptyResultDataAccessException e) {
+			return null;
+		}
 	}
 }
